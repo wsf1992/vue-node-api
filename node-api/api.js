@@ -29,6 +29,7 @@ const api = {
 
     ordersList : '/api/order/list',//订单列表
     ordersDelete : '/api/order/delete',//订单删除
+
 }
 
 module.exports = api;

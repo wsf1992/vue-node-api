@@ -53,8 +53,8 @@
 
 <el-form-item label="上传图片">
 <el-upload
-  action="https://jsonplaceholder.typicode.com/posts/"
-  list-type="picture-card"
+  action="http://10.0.0.40:3000/api/posts/"
+  list-type="text"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
   <i class="el-icon-plus"></i>

@@ -7,9 +7,9 @@ module.exports = {
         const state = req.body.state;
         let sql = '';        
         if(name){
-            sql = `select * from orders where goods_name='${name}' limit 10 offset ${nowPage}`;
+            sql = `select * from orders where goods_name='${name}' limit 10 offset ${nowPage*10}`;
         }else{
-            sql = `select * from orders limit 10 offset ${nowPage}`
+            sql = `select * from orders limit 10 offset ${nowPage*10}`
         }
         pool.query(sql,function(err,rows){
             if(err) throw err;

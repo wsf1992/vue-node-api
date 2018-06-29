@@ -26,7 +26,7 @@ module.exports = {
     },
     lists : function (req,res,next){
         const nowPage = Number(req.body.cur_page) - 1;      
-        pool.query(`select create_time,id,role,update_time,user_name from user limit 10 offset ${nowPage}`,function(err,rows){
+        pool.query(`select create_time,id,role,update_time,user_name from user limit 10 offset ${nowPage*10}`,function(err,rows){
             if(err) throw err;
             res.send({code:200,msg:'ok',resultList:rows})
         })

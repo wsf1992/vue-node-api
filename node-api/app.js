@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 
 var routers = require('./routes/index.js');
+var upload = require('./controls/upload/index.js')
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.all('*', function(req, res, next) {
 });
 
 app.use(routers);
+app.use(upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

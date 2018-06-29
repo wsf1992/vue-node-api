@@ -6,9 +6,9 @@ module.exports = {
         const name = req.body.goods_typename;
         let sql = '';
         if(name){
-            sql = `select * from goodstype where goods_typename like '%${name}%' limit 10 offset ${nowPage}`;
+            sql = `select * from goodstype where goods_typename like '%${name}%' limit 10 offset ${nowPage*10}`;
         }else{
-            sql = `select * from goodstype limit 10 offset ${nowPage}`
+            sql = `select * from goodstype limit 10 offset ${nowPage*10}`
         }
         pool.query(sql,function(err,rows){
             if(err) throw err;
